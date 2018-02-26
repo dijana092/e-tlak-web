@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>e-Tlak</title>
+
+    <!-- Web-preglednik zna da je web stranica optimizirana za mobilne uređaje -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Uvoz Google Icon Font-a -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Sastavljen i sažet Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- Sastavljen i sažet Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!-- Vue.js -->
+    <script src="https://unpkg.com/vue@2.5.3/dist/vue.js"></script>
+
+    <!-- Prilagođeni stil -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<!-- Početna stranica sa prijavom i registracijom -->
+<body>
+<main class="row">
+    <div class="body-box z-depth-5">
+        <div class="col s6 push">
+            <img src="img/logo_index.png" alt="logo" class="displayed"/>
+            <h3>Dobrodošli na e-Tlak!</h3>
+            <p class="left-align section-1">
+                E-Tlak je web aplikacija namijenjena praćenju Vašeg krvnog tlaka i srčane frekvencije
+                kao osnovnih podataka u dijagnostici arterijske hipertenzije.</p>
+            <p class="left-align section-1 hide-on-small-only">Kako bi mogli koristiti web aplikaciju, instalirajte mobilnu aplikaciju e-Tlak,
+                registrirajte se i prijavite te sudjelujte u promicanju zdravlja i prevenciji kardiovaskularnih bolesti.</p>
+        </div>
+
+        <div id="login" class="col s6 pull" :style="{ display: display }">
+            <form>
+                <h3>Prijava</h3>
+                <div class="input-field" >
+                    <i class="material-icons prefix material-icons-color">account_circle</i>
+                    <input v-model="username" id="login_username" type="text">
+                    <label for="login_username">Korisničko ime</label>
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons prefix material-icons-color" @click="showPassword = !showPassword">{{showPassword ? 'visibility'
+                        : 'visibility_off'}}</i>
+                    <input v-model="password" id="login_password" :type="showPassword ? 'text' : 'password'">
+                    <label for="login_password">Lozinka</label>
+                </div>
+
+                <div class="left-align section">
+                    <button @click="login" class="waves-effect waves-light button z-depth-2" type="submit">
+                        <span>PRIJAVA</span>
+                    </button>
+                    <div class="left-align section">
+                        <a @click="showRegister" href="#" class="waves-effect waves-light button z-depth-2"><i
+                                class="material-icons right">add</i>REGISTRIRAJTE SE!</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div id="register" class="col s6 pull" :style="{ display: display }">
+            <form>
+                <h3>Registracija</h3>
+                <div class="input-field">
+                    <i class="material-icons prefix material-icons-color">account_circle</i>
+                    <input v-model="username" id="register_username" type="text">
+                    <label for="register_username">Korisničko ime</label>
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons prefix material-icons-color" @click="showPassword = !showPassword">{{showPassword ? 'visibility'
+                        : 'visibility_off'}}</i>
+                    <input v-model="password" id="register_password" :type="showPassword ? 'text' : 'password'">
+                    <label for="register_password">Lozinka</label>
+                </div>
+
+                <div class="left-align section">
+                    <button @click="register" class="waves-effect waves-light button z-depth-2" type="submit">
+                        <span>REGISTRACIJA</span>
+                    </button>
+                    <div class="left-align section">
+                        <a @click="showLogin" href="#" class="waves-effect waves-light button z-depth-2"><i
+                                class="material-icons right">person</i>PRIJAVITE SE!</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    &copy; 2018 Dijana Jaranović
+</footer>
+
+<!-- Prilagođeni JavaScript -->
+<script src="js/index.js"></script>
+</body>
+</html>

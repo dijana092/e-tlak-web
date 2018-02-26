@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <title>e-Tlak</title>
+
+    <!-- Web-preglednik zna da je web stranica optimizirana za mobilne uređaje -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- Uvoz Google Icon Font-a -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Sastavljen i sažet Materialize CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <!-- Sastavljen i sažet Materialize JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!-- Chart.js -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.bundle.min.js"></script>
+    <!-- Vue-ChartJs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-chartjs/3.0.2/vue-chartjs.min.js"></script>
+    <!-- Vue.js -->
+    <script src="https://unpkg.com/vue@2.5.3/dist/vue.js"></script>
+    <!-- Vue-router -->
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+    <!-- Prilagođeni stil -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+
+<!-- Glavna stranica sa navigacijom i sadržajem -->
+<body>
+<div class="container-fluid">
+    <main id="app">
+        <div class="row">
+
+            <!-- Navigacija -->
+            <div class="col s2 navigation">
+                <img src="img/logo_main.png" alt="e-tlak logo"/>
+                <h2 class="center-align ">{{userName}}</h2>
+                    <ul>
+                        <li><router-link class="collection-item" to="/" exact>PREGLED</router-link></li>
+                        <li><router-link class="collection-item" to="/pressure" exact>KRVNI TLAK</router-link></li>
+                        <li><router-link class="collection-item" to="/weight" exact>TJELESNA MASA</router-link></li>
+                        <li><router-link class="collection-item" to="/history" exact>POVIJEST UNOSA</router-link></li>
+                    </ul>
+                    <ul class="logout">
+                        <li><a @click="logout" href="#"
+                           class="collection-item logout">Odjava</a></li>
+                    </ul>
+            </div>
+
+            <!-- Glavni sadržaj -->
+            <div class="col s10 push-s2 content">
+                <router-view v-if="loaded" :entries="entries" :weight="weight" :dates="dates"
+                             :weights="weights" :colors="colors"></router-view>
+            </div>
+
+            <footer class="col s10 push-s2 footer footer-main">
+                &copy; 2018 Dijana Jaranović
+            </footer>
+        </div>
+    </main>
+</div>
+
+<!-- Komponente -->
+<script src="js/components/grafovi.js"></script>
+<script src="js/components/pregled.js"></script>
+<script src="js/components/krvni-tlak.js"></script>
+<script src="js/components/tjelesna-masa.js"></script>
+<script src="js/components/povijest-unosa.js"></script>
+
+<!-- Prilagođeni JS: Glavna Vue instanca i router -->
+<script src="js/main.js"></script>
+</body>
+</html>

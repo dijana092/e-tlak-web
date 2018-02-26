@@ -1,0 +1,293 @@
+body {
+    background: url('../img/background.jpg');
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    margin: 0;
+}
+
+/* okvir na početku kod prijave i registracije */
+.body-box{
+    width: 950px;
+    height: 470px;
+    background-color: rgba(206, 55, 73, 0.75);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 15px 60px 40px;
+}
+
+main {
+    background-color: white;
+    flex: 1 0 auto;
+}
+
+.displayed{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+/* poravnanje teksta u 1.dijelu okvira */
+.section-1{
+    text-align: justify;
+    text-justify: inter-word;
+    margin-right: 20px;
+}
+
+/* gumbi na početku, kod prijave i registracije */
+.button {
+    display: inline-block;
+    border-radius: 5px;
+    background-color: #970022;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 1.3em;
+    padding: 13px;
+    width: 250px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 2px;
+}
+
+/* ostala obilježja i stilovi gumba */
+.button:focus{
+    background-color: #970022;
+}
+
+.button:hover{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.24), 0 9px 42px 0 rgba(0,0,0,0.19);
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+/* boja forme za unos korisničkog imena te lozinke, i boja labele kod fokusa */
+.input-field label, .input-field input[type=text]:focus + label {
+    color: #ffc3ce;
+}
+
+/* stil labele, povlake kod fokusa, inače, kada je unos u obliku šife, valid i invalid */
+.input-field input[type=text]:focus, .input-field input[type=text], .input-field input[type=password], .input-field input[type=text].valid, .input-field input[type=text].invalid, .input-field input[type=text].valid {
+    border-bottom: 1px solid #ffc3ce;
+}
+
+/* boja ikonica na formi za unos, kod fokusa */
+.input-field .prefix.active {
+    color: #970022;
+}
+
+/* boja labele kod fokusa */
+.input-field input:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+    color: #970022 !important;
+}
+
+/* boja labele, povlake kod fokusa */
+.input-field input:focus, .materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #970022 !important;
+    box-shadow: 0 1px 0 0 #970022 !important;
+}
+
+/* boja unesenog teksta u formi za unos */
+.input-field input, select, textarea{
+    color: #620000;
+}
+
+/* stil u slučaju odabira memoriranog korisničkog imena */
+.input-field input:-webkit-autofill, .input-field input:-webkit-autofill:hover, .input-field input:-webkit-autofill:focus, .input-field input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: #620000; !important;
+}
+
+/* boja ikonica na formi za unos */
+.material-icons-color{
+    color: #ffc3ce;
+    cursor: pointer;
+}
+
+/* pozicija toast-a */
+#toast-container {
+    bottom: auto !important;
+    left: auto !important;
+    top: 20%;
+    right: 18%;
+}
+
+/* footer na početnoj stranici */
+footer {
+    font-size: 1.5em;
+    color: #8A8486;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 15px;
+    text-align: center;
+}
+
+/* element glavne stranice u kojem se nalaze navigacija i sadržaj */
+.container-fluid{
+    min-height: 100vh;
+}
+
+/* navigacija na lijevoj strani na glavnoj stranici */
+.navigation{
+    background-color: #970022;
+    height: 100vh !important;
+    position: fixed;
+    font-size: 1.3em;
+}
+
+/* boja korisničkog imena na navigaciji */
+main h2{
+    color: #ffc3ce;
+}
+
+/* logo na navigaciji */
+img{
+    display: block;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* lista navigacije */
+ul{
+    margin-top: 30px;
+}
+
+/* izgled liste navigacije */
+ul li a{
+    display: block;
+    padding: 13px;
+    border-bottom: 1px solid #B51036;
+}
+
+/* boja teksta elemenata liste navigacije */
+.collection-item{
+    color: #ffc3ce;
+}
+
+/* izgled selektiranog elementa sa liste navigacije */
+li a.active {
+    background-color: #B51036;
+    color: white;
+}
+
+/* izgled elementa koji se želi selektirati sa liste navigacije */
+li a:hover:not(.active) {
+    background-color: rgba(206, 55, 73, 0.75);
+    color: white;
+}
+
+/* pozicija elementa navigacije 'Odjava' */
+.logout{
+    position: absolute;
+    bottom: 0;
+    width: 31vh;
+    border-bottom: none;
+}
+
+/* sadržaj sa desne strane na glavnoj stranici */
+.content{
+    background-color: #eceded;
+    min-height: 100vh !important;
+    padding-bottom: 10px !important;
+}
+
+/* veličina naslova odabrane kartice */
+h4{
+    color: rgba(206, 55, 73, 0.75);
+}
+
+/* okviri za prikaz podataka kod kartice 'Tjelesna masa' */
+.box {
+    color: #4c494b;
+    font-size: 1.5em;
+}
+
+/* stil naslova odabrane kartice, kod kartice 'Povijest unosa' */
+h6{
+    color: #4c494b;
+    word-spacing: 10px;
+    text-align: justify;
+    font-size: 1.2em;
+}
+
+/* okvir za prikaz podataka kod kartice 'Povijest unosa' */
+.box-history {
+    color: #4c494b;
+    font-size: 1.2em;
+}
+
+/* okvir filtriranja kod kartice 'Povijest unosa' */
+.box-filter-history{
+    color: #4c494b;
+    font-size: 1.5em;
+}
+
+/* pointer na naslovima tablice kod kartice 'Povijest unosa' */
+.th {
+    cursor: pointer;
+}
+
+/* stil kvačice koja označava po čemu je sortirano kod kartice 'Povijest unosa' */
+.sort-tag {
+    position: relative;
+    bottom: -5px;
+}
+
+/* stil kvačice kod prikaza, odabira kod kartice 'Povijest unosa' */
+.check:checked + label:before {
+    border-right: 2px solid #970022;
+    border-bottom: 2px solid #970022;
+}
+
+/* tranzicija, animacija za listu unosa */
+.flip-list-move {
+    transition: transform 1s;
+}
+
+/* footer na glavnoj stranici */
+.footer-main{
+    background-color: rgba(206, 55, 73, 0.75);
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+    color: white !important;
+}
+
+/* za uklanjanje praznine na glavnoj stranici kod footer-a */
+.row:last-child {
+    margin-bottom: 0;
+}
