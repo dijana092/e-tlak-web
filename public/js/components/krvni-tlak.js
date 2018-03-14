@@ -53,7 +53,17 @@ const Pressure = Vue.component('Pressure', {
                 scales: {
                     xAxes: [{
                         type: 'linear',
-                        position: 'top'
+                        position: 'bottom',
+                        ticks: {
+                            min: 50,
+                            max: 130
+                        }
+                    }],
+                    yAxes: [{
+                        ticks: {
+                            min: 80,
+                            max: 190
+                        }
                     }]
                 },
                 tooltips: {
@@ -240,10 +250,89 @@ const Pressure = Vue.component('Pressure', {
                 pointBorderWidth:0,
                 // data mora biti polje s objektima od kojih svaki ima x i y vrijednost, stvoren iznad na početku created() metode
                 data: scatterData,
-                backgroundColor: '#CD6155',
-                pointHoverBackgroundColor: '#AA3C30',
+                backgroundColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
                 borderWidth: 1
-            }
+            },
+                // pozadinske boje dijagnoza na grafikonu
+                {
+                    pointRadius: 0,
+                    pointHitRadius: 0,
+                    pointHoverRadius: 0,
+                    pointBorderWidth: 0,
+                    showLine: true,
+                    steppedLine: true,
+                    borderWidth: 1,
+                    spanGaps: false,
+                    backgroundColor: this.colors.optimalan,
+                    borderColor: '#fff',
+                    data: [{x:40,y:120}, {x:80,y:0}]
+                },
+                {
+                    pointRadius: 0,
+                    pointHitRadius: 0,
+                    pointHoverRadius: 0,
+                    pointBorderWidth: 0,
+                    showLine: true,
+                    steppedLine: true,
+                    borderWidth: 1,
+                    spanGaps: false,
+                    backgroundColor: this.colors.normalan,
+                    borderColor: '#fff',
+                    data: [{x:40,y:130}, {x:85,y:0}],
+                },
+                {
+                    pointRadius: 0,
+                    pointHitRadius: 0,
+                    pointHoverRadius: 0,
+                    pointBorderWidth: 0,
+                    showLine: true,
+                    steppedLine: true,
+                    borderWidth: 1,
+                    spanGaps: false,
+                    backgroundColor: this.colors.povisen,
+                    borderColor: '#fff',
+                    data: [{x:40,y:140}, {x:90,y:0}],
+                },
+                {
+                    pointRadius: 0,
+                    pointHitRadius: 0,
+                    pointHoverRadius: 0,
+                    pointBorderWidth: 0,
+                    showLine: true,
+                    steppedLine: true,
+                    borderWidth: 1,
+                    spanGaps: false,
+                    backgroundColor: this.colors.hipertenzija1,
+                    borderColor: '#fff',
+                    data: [{x:40,y:160}, {x:100,y:0}],
+                },
+                {
+                    pointRadius: 0,
+                    pointHitRadius: 0,
+                    pointHoverRadius: 0,
+                    pointBorderWidth: 0,
+                    showLine: true,
+                    steppedLine: true,
+                    borderWidth: 1,
+                    spanGaps: false,
+                    backgroundColor: this.colors.hipertenzija2,
+                    borderColor: '#fff',
+                    data: [{x:40,y:180}, {x:110,y:0}],
+                },
+                {
+                    pointRadius: 0,
+                    pointHitRadius: 0,
+                    pointHoverRadius: 0,
+                    pointBorderWidth: 0,
+                    showLine: true,
+                    steppedLine: true,
+                    borderWidth: 1,
+                    spanGaps: false,
+                    backgroundColor: this.colors.hipertenzija3,
+                    borderColor: '#fff',
+                    data: [{x:40,y:190}, {x:130,y:0}],
+                }
             ]
         };
 
