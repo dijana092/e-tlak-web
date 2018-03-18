@@ -55,14 +55,14 @@ const Pressure = Vue.component('Pressure', {
                         type: 'linear',
                         position: 'bottom',
                         ticks: {
-                            min: 50,
+                            min: 60,
                             max: 130
                         }
                     }],
                     yAxes: [{
                         ticks: {
-                            min: 80,
-                            max: 190
+                            min: 60,
+                            max: 200
                         }
                     }]
                 },
@@ -331,7 +331,7 @@ const Pressure = Vue.component('Pressure', {
                     spanGaps: false,
                     backgroundColor: '#c48acf',
                     borderColor: '#fff',
-                    data: [{x:40,y:190}, {x:130,y:0}],
+                    data: [{x:40,y:200}, {x:130,y:0}],
                 }
             ]
         };
